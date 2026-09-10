@@ -53,3 +53,5 @@ errors.log
 .hermes_history
 
 *.bak*
+*.lock
+

@@ -3,10 +3,71 @@ model:
   provider: openrouter
   base_url: https://openrouter.ai/api/v1
   api_mode: chat_completions
+agent:
+  max_turns: 150
+web:
+  backend: crawl4ai
+display:
+  tool_progress: all
 plugins:
-  enabled: []
+  enabled:
+    - hermes-crawl4searxng
+  disabled: []
+  entries:
+    hermes-crawl4searxng:
+      allow_tool_override: true
 _config_version: 39
-agent: {}
+session_reset:
+  mode: none
+platform_toolsets:
+  cli:
+    - clarify
+    - code_execution
+    - cronjob
+    - delegation
+    - file
+    - hermes_crawl4searxng
+    - memory
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - tts
+    - vision
+    - web
+known_plugin_toolsets:
+  cli:
+    - a2a
+    - hermes_crawl4searxng
+    - spotify
+known_builtin_toolsets:
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - context_engine
+    - cronjob
+    - delegation
+    - discord
+    - discord_admin
+    - file
+    - homeassistant
+    - image_gen
+    - memory
+    - session_search
+    - skills
+    - spotify
+    - stt
+    - terminal
+    - todo
+    - tts
+    - video
+    - video_gen
+    - vision
+    - web
+    - x_search
+    - yuanbao
 
 # ── Security ──────────────────────────────────────────────────────────
 # Secret redaction is ON by default — strings that look like API keys,
