@@ -51,3 +51,5 @@ backups/
 # Logs
 errors.log
 .hermes_history
+
+*.bak*

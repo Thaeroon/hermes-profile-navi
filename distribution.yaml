@@ -1,0 +1,18 @@
+name: navi
+version: 1.0.0
+description: "Small and annoying"
+hermes_requires: ">=0.12.0"
+author: "Nicolas Muller"
+license: "MIT"
+
+# Tell installers which env vars the agent needs. These are checked against
+# the installer's shell and existing .env file so they don't get nagged
+# about keys they already have configured.
+# env_requires:
+#   - name: OPENAI_API_KEY
+#     description: "OpenAI API key (for model access)"
+#     required: true
+#   - name: SERPAPI_KEY
+#     description: "SerpAPI key for web search"
+#     required: false
+#     default: ""
