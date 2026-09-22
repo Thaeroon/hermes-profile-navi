@@ -1,8 +1,8 @@
 model:
-  default: thinkingmachines/inkling-small:free
-  provider: openrouter
-  base_url: https://openrouter.ai/api/v1
-  api_mode: chat_completions
+  default: openbmb/MiniCPM5-1B-GGUF:Q8_0
+  provider: custom
+  base_url: http://llamacpp.llm.svc.cluster.local:8080/v1
+  api_key: ${HERMES_CUSTOM_LLAMACPP_LLM_SVC_CLUSTER_LOCAL_8080_API_KEY}
 agent:
   max_turns: 150
 web:
@@ -11,11 +11,11 @@ display:
   tool_progress: all
 plugins:
   enabled:
-    - hermes-crawl4searxng
+    - crawl4ai
   disabled: []
-  entries:
-    hermes-crawl4searxng:
-      allow_tool_override: true
+onboarding:
+  seen:
+    busy_input_prompt: true
 _config_version: 39
 session_reset:
   mode: none
@@ -38,7 +38,6 @@ platform_toolsets:
 known_plugin_toolsets:
   cli:
     - a2a
-    - hermes_crawl4searxng
     - spotify
 known_builtin_toolsets:
   cli:
@@ -68,6 +67,13 @@ known_builtin_toolsets:
     - web
     - x_search
     - yuanbao
+custom_providers:
+  - name: llamacpp
+    base_url: http://llamacpp.llm.svc.cluster.local:8080/v1
+    key_env: HERMES_CUSTOM_LLAMACPP_LLM_SVC_CLUSTER_LOCAL_8080_API_KEY
+    models:
+      openbmb/MiniCPM5-1B-GGUF:Q8_0: {}
+    models_discovered: true
 
 # ── Security ──────────────────────────────────────────────────────────
 # Secret redaction is ON by default — strings that look like API keys,
