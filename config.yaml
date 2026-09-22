@@ -1,12 +1,12 @@
 model:
-  default: openbmb/MiniCPM5-1B-GGUF:Q8_0
+  default: openbmb/MiniCPM5-2B-GGUF:Q8_0
   provider: custom
   base_url: http://llamacpp.llm.svc.cluster.local:8080/v1
   api_key: ${HERMES_CUSTOM_LLAMACPP_LLM_SVC_CLUSTER_LOCAL_8080_API_KEY}
 agent:
   max_turns: 150
 web:
-  backend: crawl4ai
+  extract_backend: crawl4ai
 display:
   tool_progress: all
 plugins:
@@ -72,7 +72,7 @@ custom_providers:
     base_url: http://llamacpp.llm.svc.cluster.local:8080/v1
     key_env: HERMES_CUSTOM_LLAMACPP_LLM_SVC_CLUSTER_LOCAL_8080_API_KEY
     models:
-      openbmb/MiniCPM5-1B-GGUF:Q8_0: {}
+      openbmb/MiniCPM5-2B-GGUF:Q8_0: {}
     models_discovered: true
 
 # ── Security ──────────────────────────────────────────────────────────
