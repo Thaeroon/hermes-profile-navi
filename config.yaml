@@ -74,6 +74,7 @@ custom_providers:
     models:
       openbmb/MiniCPM5-2B-GGUF:Q8_0: {}
     models_discovered: true
+    model: openbmb/MiniCPM5-2B-GGUF:Q8_0
 
 # ── Security ──────────────────────────────────────────────────────────
 # Secret redaction is ON by default — strings that look like API keys,
